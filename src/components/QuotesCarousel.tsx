@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, TouchEvent } from 'react'
-import './QuotesCarousel.css'
+import styles from './QuotesCarousel.module.css'
 
 
 type QuotesCarouselProps = {
@@ -103,14 +103,14 @@ function QuotesCarousel({ quotes, ...props }: QuotesCarouselProps) {
             }}
             {...props}
         >
-            <div className="quote-container">
-                <div className={`quote-item quote-current ${animating ? 'fade-out psychedelic' : ''}`}>
+            <div className={styles.quoteContainer}>
+                <div className={`${styles.quoteItem} ${styles.quoteCurrent} ${animating ? styles.fadeOut : styles.psychedelic}`}>
                     {currentQuote.quoteBlock.map((line, i) => (
                         <QuoteLine key={i} line={line} />
                     ))}
                 </div>
 
-                <div className={`quote-item quote-previous ${animating ? 'fade-in' : ''}`}>
+                <div className={`${styles.quoteItem} ${styles.quotePrevious} ${animating ? styles.fadeIn : ''}`}>
                     {previousQuote.quoteBlock.map((line, i) => (
                         <QuoteLine key={i} line={line} />
                     ))}

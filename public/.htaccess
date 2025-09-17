@@ -1,0 +1,14 @@
+Options -MultiViews
+RewriteEngine On
+
+# Serve existing files or directories
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# If a matching .html exists, serve it (supports /route → /route.html if you ever need)
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^ %{REQUEST_URI}.html [L]
+
+# Optional: serve your exported 404
+ErrorDocument 404 /404/index.html

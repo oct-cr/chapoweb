@@ -2,30 +2,27 @@
 
 import { useEffect } from 'react'
 // eslint-disable-next-line camelcase
-import { Exo_2 } from 'next/font/google'
-
+import { Exo_2, Carter_One } from 'next/font/google'
 import Link from 'next/link'
 import NextImage from 'next/image'
 
-import '../styles/globals.css'
 import ui from '../styles/ui.module.css'
 
 
 const exo = Exo_2({
     subsets: ['latin'],
+    display: 'swap',
+    variable: '--font-body',
 })
 
-// const headerFont = Carter_One({
-//     subsets: ['latin'],
-//     weight: '400',
-// })
+const headerFont = Carter_One({
+    subsets: ['latin'],
+    weight: '400',
+    display: 'swap',
+    variable: '--font-header',
+})
 
-
-export default function RootLayout({
-    children,
-}: Readonly<{
-    children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
     useEffect(() => {
         const img = new Image()
         img.src = '/bg-chapo-tek-website.jpg'
@@ -38,7 +35,7 @@ export default function RootLayout({
 
     return (
         <html lang="en">
-            <body className={exo.className}>
+            <body className={`${exo.variable} ${headerFont.variable}`}>
                 <Link href='/'>
                     <NextImage
                         src="/logo-CHAPOtek.webp"

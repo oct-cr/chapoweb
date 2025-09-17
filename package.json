@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "static": "cd out && php -S localhost:8080"
   },
   "dependencies": {
     "@next/third-parties": "^15.3.2",
