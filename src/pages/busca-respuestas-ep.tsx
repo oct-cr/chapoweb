@@ -1,12 +1,21 @@
 import Image from 'next/image'
-import Video from '../components/YouTubeVideo'
+
+import { CustomHead } from '../components/CustomHead'
 import QuotesCarousel from '../components/QuotesCarousel'
+import Video from '../components/YouTubeVideo'
+
 import quotes from '../data-sources/br-quotes'
+
 
 export default function Page() {
     return (
         <main>
+            <CustomHead
+                title="Busca Respuestas EP | CHAPOtek"
+                description='"Busca Respuestas" mezcla reggae y rap. 5inco canciones que invitan a mover el cuerpo y sacudir la mente.'
+            />
             <h1>Busca Respuestas</h1>
+            <p>EP - 2024</p>
             <Image
                 src="/busca-respuestas-chapotek.webp"
                 alt="Busca Respuestas es un álbum de CHAPOtek"
@@ -38,23 +47,41 @@ export default function Page() {
 
             <h2>Agua va a caer</h2>
             <Video videoid="Dp1tXlliNYM" />
-            <p>
-                <strong>Coros</strong>:&nbsp;<a href="" target="_blank" rel="noreferrer noopener">Natalia Gómez Salas</a>
-            </p>
 
-            <h3>Video</h3>
-            <p>
-                <strong>Dirección</strong> &amp; <strong>Edición</strong>:&nbsp;
-                <a href="https://www.instagram.com/alvarodrop" target="_blank" rel="noreferrer noopener">Álvaro Drop</a>
-            </p>
 
             <h2>Llamando tu atención</h2>
             <Video videoid='AAPeuN0obXE' />
-            <p><strong>Guitarra</strong>:&nbsp;<a href="" target="_blank" rel="noreferrer noopener">Jp Gómez</a></p>
 
-            <h3>Video</h3>
+            <h2>Busca Respuestas</h2>
+            <Video videoid="emltQ0w45zk" />
+
+            <h2>Viene y agita</h2>
+            <Video videoid="x6ntGoI_eOU" />
+
+            <h2>ven seremos</h2>
+            <Video videoid="Pua0M65BSY4" />
+
+            <hr className="my-15 border-0" />
+
+            <h3>con la participación de:</h3>
+
+
+            <p><strong>Fotografía Tapa</strong>: <a href="https://www.instagram.com/juliozavalia/" target="_blank" rel="noopener">Julio Zavalía</a> ** <strong>Diseño Tapa</strong>: <a href="https://www.instagram.com/pab.lop.visual/" target="_blank" rel="noopener">Pablo López</a></p>
+            <p><strong>Producción Musical</strong>: <a href="https://www.instagram.com/lu.go.sa/" target="_blank" rel="noreferrer noopener">Luis Gomez Salas</a> &amp; CHP [[ <strong>Grabado en</strong>: <a href="https://www.instagram.com/estudiolugosa" target="_blank" rel="noreferrer noopener">Lugosa</a> ^^ <strong>Mezcla</strong>: <a href="https://www.instagram.com/arm_b3at" target="_blank" rel="noreferrer noopener">ARI Riddim Maker</a> ;; <strong>Masterización</strong>: 1 y 2: Afrosound; 3, 4 y 5: <a href="https://www.matiasparisimastering.com/" target="_blank" rel="noopener">Matías Parisi</a> @@ <strong>Letra</strong> y <strong>Música</strong>: CHP</p>
+
+            <h4>Agua va a caer</h4>
             <p>
-                <strong>Dirección</strong> &amp; <strong>Edición</strong>:&nbsp;
+                <strong>Coros</strong>:&nbsp;<a href="" target="_blank" rel="noreferrer noopener">Natalia Gómez Salas</a>
+            </p>
+            <p>
+                <strong>VIDEO: Dirección</strong> &amp; <strong>Edición</strong>:&nbsp;
+                <a href="https://www.instagram.com/alvarodrop" target="_blank" rel="noreferrer noopener">Álvaro Drop</a>
+            </p>
+
+            <h4>Llamando tu atención</h4>
+            <p><strong>Guitarra</strong>:&nbsp;<a href="" target="_blank" rel="noreferrer noopener">Jp Gómez</a></p>
+            <p>
+                <strong>VIDEO: Dirección</strong> &amp; <strong>Edición</strong>:&nbsp;
                 <a href="https://www.instagram.com/alvarodrop" target="_blank" rel="noreferrer noopener">Álvaro Drop</a>
                 _ <strong>Guión</strong>:&nbsp;
                 <a href="https://www.instagram.com/agusti_" target="_blank" rel="noreferrer noopener">Agustina Garrocho</a>
@@ -68,23 +95,13 @@ export default function Page() {
                 &nbsp;&#8211; Álvaro Drop
             </p>
 
-            <h2>Busca Respuestas</h2>
-            <Video videoid="emltQ0w45zk" />
-
-            <h2>Viene y agita</h2>
-            <Video videoid="x6ntGoI_eOU" />
-
-            <h2>ven seremos</h2>
-            <Video videoid="Pua0M65BSY4" />
-
+            <h5>ven seremos</h5>
             <p>
                 <strong>Guitarra</strong>:&nbsp;<a href="" target="_blank" rel="noreferrer noopener">Jp Gómez</a>
             </p>
 
-            <hr className="my-15 border-0" />
+            <hr />
 
-            <p><strong>Fotografía Tapa</strong>: <a href="https://www.instagram.com/juliozavalia/" target="_blank" rel="noopener">Julio Zavalía</a> ** <strong>Diseño Tapa</strong>: <a href="https://www.instagram.com/pab.lop.visual/" target="_blank" rel="noopener">Pablo López</a></p>
-            <p><strong>Producción Musical</strong>: <a href="https://www.instagram.com/lu.go.sa/" target="_blank" rel="noreferrer noopener">Luis Gomez Salas</a> &amp; CHP [[ <strong>Grabado en</strong>: <a href="https://www.instagram.com/estudiolugosa" target="_blank" rel="noreferrer noopener">Lugosa</a> ^^ <strong>Mezcla</strong>: <a href="https://www.instagram.com/arm_b3at" target="_blank" rel="noreferrer noopener">ARI Riddim Maker</a> ;; <strong>Masterización</strong>: 1 y 2: Afrosound; 3, 4 y 5: <a href="https://www.matiasparisimastering.com/" target="_blank" rel="noopener">Matías Parisi</a> @@ <strong>Letra</strong> y <strong>Música</strong>: CHP</p>
             <p><strong>Grax</strong>: Pablo Arias, Iggy Ras, Pete Nadal, Jin Yerei, Germán Paz, El Ju, Ariel Paex, Jero Santillán, amigues, familia y Magda</p>
         </main >
     )

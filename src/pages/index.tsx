@@ -1,12 +1,17 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { CustomHead } from '../components/CustomHead'
 import fxCss from '../styles/fx.module.css'
 
 
 export default function Page() {
     return (
         <main>
+            <CustomHead
+                title="CHAPOtek - sacude tu mente"
+                description="CHAPOtek ^ reggae rap - música"
+            />
             <div className='flex flex-col md:flex-row gap-x-20 gap-y-5 justify-center mb-20'>
                 <div className='pt-10'>
                     <p>mueve tu cuerpo</p>
