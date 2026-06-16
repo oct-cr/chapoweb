@@ -5,12 +5,52 @@ import { CustomHead } from '../components/CustomHead'
 import fxCss from '../styles/fx.module.css'
 
 
+const JSONLD = {
+    '@context': 'https://schema.org',
+    '@graph': [
+        {
+            '@type': 'WebSite',
+            '@id': 'https://chapotek.net/#website',
+            'url': 'https://chapotek.net/',
+            'name': 'CHAPOtek',
+            'inLanguage': 'es-AR',
+            'description': 'CHAPOtek mezcla reggae y rap. Mueve tu cuerpo, sacude tu mente.',
+            'publisher': { '@type': 'Person', 'name': 'CHAPOtek', 'url': 'https://chapotek.net/' }
+        },
+        {
+            '@type': 'Person',
+            '@id': 'https://chapotek.net/#artist',
+            'name': 'CHAPOtek',
+            'alternateName': 'CHP',
+            'url': 'https://chapotek.net/',
+            'inLanguage': 'es-AR',
+            'genre': ['Reggae', 'Rap', 'Hip Hop'],
+            'image': [
+                'https://chapotek.net/CHAPOtek-perfil.jpg',
+            ],
+            'sameAs': [
+                'https://www.instagram.com/chapo.tek',
+                'https://www.youtube.com/@chapotek'
+            ],
+            'homeLocation': [
+                { '@type': 'City', 'name': 'Buenos Aires, Argentina' },
+                { '@type': 'City', 'name': 'Tucumán, Argentina' },
+                { '@type': 'City', 'name': 'Köln, Alemania' }
+            ],
+            'description': 'Proyecto musical que fusiona reggae y rap.',
+            'potentialAction': { '@type': 'ListenAction', 'target': ['https://www.youtube.com/@chapotek'] }
+        }
+    ]
+}
+
+
 export default function Page() {
     return (
         <main>
             <CustomHead
-                title="CHAPOtek - sacude tu mente"
-                description="CHAPOtek ^ reggae rap - música"
+                title="CHAPOtek ^ sacude tu mente"
+                description="CHAPOtek Ж reggae rap - música"
+                jsonLd={JSONLD}
             />
             <div className='flex flex-col md:flex-row gap-x-20 gap-y-5 justify-center mb-20'>
                 <div className='pt-10'>

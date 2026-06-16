@@ -7,12 +7,172 @@ import Video from '../components/YouTubeVideo'
 import quotes from '../data-sources/br-quotes'
 
 
+const JSONLD = {
+    '@context': 'https://schema.org',
+    '@graph': [
+        {
+            '@type': 'WebPage',
+            '@id': 'https://chapotek.net/busca-respuestas-ep/#webpage',
+            'url': 'https://chapotek.net/busca-respuestas-ep/',
+            'name': 'Busca Respuestas – EP | CHAPOtek',
+            'inLanguage': 'es-AR',
+            'description': '“Busca Respuestas” mezcla reggae y rap. 5 canciones que invitan a mover el cuerpo y sacudir la mente.',
+            'isPartOf': { '@id': 'https://chapotek.net/#website' }
+        },
+        {
+            '@type': 'MusicAlbum',
+            '@id': 'https://chapotek.net/busca-respuestas-ep/#album',
+            'name': 'Busca Respuestas',
+            'url': 'https://chapotek.net/busca-respuestas-ep/',
+            'inLanguage': 'es-AR',
+            'image': 'https://chapotek.net/busca-respuestas-chapotek.webp',
+            'byArtist': { '@id': 'https://chapotek.net/#artist' },
+            'genre': ['Reggae', 'Rap', 'Hip Hop'],
+            'numTracks': 5,
+            'datePublished': '2024',
+            'potentialAction': [
+                { '@type': 'ListenAction', 'target': 'https://open.spotify.com/album/7qw2W7e3Q8DzlWM79A4AxU' },
+                { '@type': 'ListenAction', 'target': 'https://music.youtube.com/playlist?list=OLAK5uy_lcuFKUglE3nUEHT7fdVDTY3E8SjOYZLrA' },
+                { '@type': 'ListenAction', 'target': 'https://www.youtube.com/playlist?list=PLP2B7J7vbwY8-W3U7yg1-LF9qJewnr5v7' }
+            ],
+            'producer': [
+                { '@type': 'Person', 'name': 'Luis Gomez Salas', 'sameAs': 'https://www.instagram.com/lu.go.sa/' },
+                { '@type': 'Person', 'name': 'CHP' }
+            ],
+            'recordingLocation': { '@type': 'Place', 'name': 'Lugosa', 'sameAs': 'https://www.instagram.com/estudiolugosa' },
+            'track': [
+                {
+                    '@type': 'MusicRecording',
+                    '@id': 'https://chapotek.net/busca-respuestas-ep/#track-agua-va-a-caer',
+                    'name': 'Agua va a caer',
+                    'inLanguage': 'es-AR',
+                    'byArtist': { '@id': 'https://chapotek.net/#artist' },
+                    'isPartOf': { '@id': 'https://chapotek.net/busca-respuestas-ep/#album' },
+                    'url': 'https://chapotek.net/busca-respuestas-ep/#AguaVaACaer',
+                    'video': {
+                        '@type': 'VideoObject',
+                        'name': 'CHAPOtek - Agua va a caer',
+                        'embedUrl': 'https://www.youtube.com/embed/Dp1tXlliNYM',
+                        'url': 'https://www.youtube.com/watch?v=Dp1tXlliNYM',
+                        'thumbnailUrl': 'https://i.ytimg.com/vi/Dp1tXlliNYM/maxresdefault.jpg',
+                        'uploadDate': '2023-12-15T14:00:00+00:00',
+                        'isFamilyFriendly': true
+                    },
+                    'contributor': [
+                        { '@type': 'Person', 'name': 'Natalia Gómez Salas', 'roleName': 'Coros' },
+                        { '@type': 'Person', 'name': 'Álvaro Drop', 'roleName': 'Dirección y Edición de video', 'sameAs': 'https://www.instagram.com/alvarodrop' }
+                    ]
+                },
+                {
+                    '@type': 'MusicRecording',
+                    '@id': 'https://chapotek.net/busca-respuestas-ep/#track-llamando-tu-atencion',
+                    'name': 'Llamando tu atención',
+                    'inLanguage': 'es-AR',
+                    'byArtist': { '@id': 'https://chapotek.net/#artist' },
+                    'isPartOf': { '@id': 'https://chapotek.net/busca-respuestas-ep/#album' },
+                    'url': 'https://chapotek.net/busca-respuestas-ep/#LlamandoTuAtencion',
+                    'video': {
+                        '@type': 'VideoObject',
+                        'name': 'CHAPOtek - Llamando tu atención',
+                        'embedUrl': 'https://www.youtube.com/embed/AAPeuN0obXE',
+                        'url': 'https://www.youtube.com/watch?v=AAPeuN0obXE',
+                        'thumbnailUrl': 'https://i.ytimg.com/vi/AAPeuN0obXE/maxresdefault.jpg',
+                        'uploadDate': '2023-09-28T14:00:00+00:00',
+                        'isFamilyFriendly': true
+                    },
+                    'contributor': [
+                        { '@type': 'Person', 'name': 'Jp Gómez', 'roleName': 'Guitarra' },
+                        { '@type': 'Person', 'name': 'Álvaro Drop', 'roleName': 'Dirección y Edición de video', 'sameAs': 'https://www.instagram.com/alvarodrop' },
+                        { '@type': 'Person', 'name': 'Agustina Garrocho', 'roleName': 'Guion, DF y Color' },
+                        { '@type': 'Person', 'name': 'Martín Burgos', 'roleName': 'Cámaras y Visuales' },
+                        { '@type': 'Person', 'name': 'Martín Falci', 'roleName': 'Producción' }
+                    ]
+                },
+                {
+                    '@type': 'MusicRecording',
+                    '@id': 'https://chapotek.net/busca-respuestas-ep/#track-busca-respuestas',
+                    'name': 'Busca Respuestas',
+                    'inLanguage': 'es-AR',
+                    'byArtist': { '@id': 'https://chapotek.net/#artist' },
+                    'isPartOf': { '@id': 'https://chapotek.net/busca-respuestas-ep/#album' },
+                    'url': 'https://chapotek.net/busca-respuestas-ep/#BuscaRespuestas',
+                },
+                {
+                    '@type': 'MusicRecording',
+                    '@id': 'https://chapotek.net/busca-respuestas-ep/#track-viene-y-agita',
+                    'name': 'Viene y agita',
+                    'inLanguage': 'es-AR',
+                    'byArtist': { '@id': 'https://chapotek.net/#artist' },
+                    'isPartOf': { '@id': 'https://chapotek.net/busca-respuestas-ep/#album' },
+                    'url': 'https://chapotek.net/busca-respuestas-ep/#VieneYAgita',
+                    'video': {
+                        '@type': 'VideoObject',
+                        'name': 'CHAPOtek - Viene y agita',
+                        'embedUrl': 'https://www.youtube.com/embed/x6ntGoI_eOU',
+                        'url': 'https://www.youtube.com/watch?v=x6ntGoI_eOU',
+                        'thumbnailUrl': 'https://i.ytimg.com/vi/x6ntGoI_eOU/maxresdefault.jpg',
+                        'uploadDate': '2024-01-11T14:00:00+00:00',
+                        'isFamilyFriendly': true
+                    }
+                },
+                {
+                    '@type': 'MusicRecording',
+                    '@id': 'https://chapotek.net/busca-respuestas-ep/#track-ven-seremos',
+                    'name': 'Ven seremos',
+                    'inLanguage': 'es-AR',
+                    'byArtist': { '@id': 'https://chapotek.net/#artist' },
+                    'isPartOf': { '@id': 'https://chapotek.net/busca-respuestas-ep/#album' },
+                    'url': 'https://chapotek.net/busca-respuestas-ep/#VenSeremos',
+                    'video': {
+                        '@type': 'VideoObject',
+                        'name': 'CHAPOtek - Ven seremos',
+                        'embedUrl': 'https://www.youtube.com/embed/Pua0M65BSY4',
+                        'url': 'https://www.youtube.com/watch?v=Pua0M65BSY4',
+                        'thumbnailUrl': 'https://i.ytimg.com/vi/Pua0M65BSY4/maxresdefault.jpg',
+                        'uploadDate': '2024-03-16T14:00:00+00:00',
+                        'isFamilyFriendly': true
+                    },
+                    'contributor': [
+                        { '@type': 'Person', 'name': 'Jp Gómez', 'roleName': 'Guitarra' }
+                    ]
+                }
+            ],
+            'contributor': [
+                { '@type': 'Person', 'name': 'Julio Zavalía', 'roleName': 'Fotografía de tapa', 'sameAs': 'https://www.instagram.com/juliozavalia/' },
+                { '@type': 'Person', 'name': 'Pablo López', 'roleName': 'Diseño de tapa', 'sameAs': 'https://www.instagram.com/pab.lop.visual/' },
+                { '@type': 'Person', 'name': 'ARI Riddim Maker', 'roleName': 'Mezcla', 'sameAs': 'https://www.instagram.com/arm_b3at' },
+                { '@type': 'Organization', 'name': 'Afrosound', 'roleName': 'Masterización (pistas 1 y 2)' },
+                { '@type': 'Person', 'name': 'Matías Parisi', 'roleName': 'Masterización (pistas 3–5)', 'sameAs': 'https://www.matiasparisimastering.com/' }
+            ]
+        },
+        {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+                {
+                    '@type': 'ListItem',
+                    'position': 1,
+                    'name': 'Inicio',
+                    'item': 'https://chapotek.net/'
+                },
+                {
+                    '@type': 'ListItem',
+                    'position': 2,
+                    'name': 'Busca Respuestas (EP)',
+                    'item': 'https://chapotek.net/busca-respuestas-ep/'
+                }
+            ]
+        }
+    ]
+}
+
+
 export default function Page() {
     return (
         <main>
             <CustomHead
                 title="Busca Respuestas EP | CHAPOtek"
                 description='"Busca Respuestas" mezcla reggae y rap. 5inco canciones que invitan a mover el cuerpo y sacudir la mente.'
+                jsonLd={JSONLD}
             />
             <h1>Busca Respuestas</h1>
             <p>EP - 2024</p>
