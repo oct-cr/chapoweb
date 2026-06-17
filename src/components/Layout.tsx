@@ -19,7 +19,7 @@ const headerFont = Carter_One({
     subsets: ['latin'],
     weight: '400',
     display: 'swap',
-    variable: '--font-header',
+    variable: '--header-font',
 })
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -30,25 +30,25 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             document.body.style.backgroundImage = `url(${img.src})`
             document.body.style.backgroundSize = 'cover'
             document.body.style.backgroundPosition = 'center'
+            document.body.style.backgroundAttachment = 'fixed'
+            document.body.style.backgroundRepeat = 'no-repeat'
         }
     }, [])
 
     return (
-        <html lang="en">
-            <body className={`${exo.variable} ${headerFont.variable}`}>
-                <Link href='/'>
-                    <NextImage
-                        src="/logo-CHAPOtek.webp"
-                        alt="Logo"
-                        width={256}
-                        height={46}
-                        priority
-                        className={ui.topLogo}
-                    />
-                </Link>
+        <div className={`${exo.className} ${headerFont.variable}`}>
+            <Link href='/' data-top-logo>
+                <NextImage
+                    src="/logo-CHAPOtek.webp"
+                    alt="Logo"
+                    width={256}
+                    height={46}
+                    priority
+                    className={ui.topLogo}
+                />
+            </Link>
 
-                {children}
-            </body>
-        </html>
+            {children}
+        </div>
     )
 }

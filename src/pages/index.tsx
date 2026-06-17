@@ -14,7 +14,7 @@ const JSONLD = {
             'url': 'https://chapotek.net/',
             'name': 'CHAPOtek',
             'inLanguage': 'es-AR',
-            'description': 'CHAPOtek mezcla reggae y rap. Mueve tu cuerpo, sacude tu mente.',
+            'description': 'CHAPOtek: desterrado del reggae y del rap. Una visión que se hace revolución.',
             'publisher': { '@type': 'Person', 'name': 'CHAPOtek', 'url': 'https://chapotek.net/' }
         },
         {
@@ -30,26 +30,47 @@ const JSONLD = {
             ],
             'sameAs': [
                 'https://www.instagram.com/chapo.tek',
-                'https://www.youtube.com/@chapotek'
+                'https://www.youtube.com/@chapotek',
+                'https://www.facebook.com/CHAPOtek',
+                'https://www.tiktok.com/@chapotek'
             ],
             'homeLocation': [
                 { '@type': 'City', 'name': 'Buenos Aires, Argentina' },
                 { '@type': 'City', 'name': 'Tucumán, Argentina' },
                 { '@type': 'City', 'name': 'Köln, Alemania' }
             ],
-            'description': 'Proyecto musical que fusiona reggae y rap.',
+            'description': 'Desterrado del reggae y del rap. Una visión que se hace revolución.',
             'potentialAction': { '@type': 'ListenAction', 'target': ['https://www.youtube.com/@chapotek'] }
         }
     ]
 }
 
 
+const SHOW_NEWSLETTER = false
+
+
 export default function Page() {
     return (
         <main>
             <CustomHead
-                title="CHAPOtek ^ sacude tu mente"
-                description="CHAPOtek Ж reggae rap - música"
+                title="CHAPOtek - desterrado del reggae y del rap"
+                description="CHAPOtek: desterrado del reggae y del rap. Una visión que se hace revolución. Música consciente en español desde Tucumán, Baires y Köln. Escuchá el EP Busca Respuestas."
+                canonical="https://chapotek.net/"
+                favicon="/favicon.ico"
+                faviconType="image/x-icon"
+                openGraph={{
+                    title: 'CHAPOtek - sacudí tu mente',
+                    description: 'Un horizonte común. Algo por lo que caminar. Desterrado del reggae y del rap, desde Tucumán, Baires y Köln.',
+                    image: 'https://chapotek.net/busca-respuestas-chapotek.webp',
+                    url: 'https://chapotek.net/',
+                    type: 'music.musician',
+                }}
+                twitter={{
+                    card: 'summary_large_image',
+                    title: 'CHAPOtek - sacudí tu mente',
+                    description: 'Un horizonte común. Algo por lo que caminar. Desterrado del reggae y del rap.',
+                    image: 'https://chapotek.net/busca-respuestas-chapotek.webp',
+                }}
                 jsonLd={JSONLD}
             />
             <div className='flex flex-col md:flex-row gap-x-20 gap-y-5 justify-center mb-20'>
@@ -59,7 +80,7 @@ export default function Page() {
                     <p className='text-right'>sacude tu mente</p>
 
                     <h1 className='!mb-0 !normal-case'>CHAPOtek</h1>
-                    <p>hace una mezcla de reggae y rap</p>
+                    <p>desterrado del reggae y del rap - una visión que se hace revolución</p>
                 </div>
                 <div>
                     <Image
@@ -72,12 +93,15 @@ export default function Page() {
                         style={{ maxHeight: '20vh', width: 'auto' }}
                     />
 
-                    <div className="flex gap-10 justify-center text-xl">
+                    <div className="grid grid-cols-2 gap-x-10 gap-y-3 justify-items-center text-xl">
                         <a href="https://www.instagram.com/chapo.tek/" target="_blank" rel="noopener">
                             inSta
                         </a>
                         <a href="https://www.youtube.com/@chapotek" target="_blank" rel="noopener">
                             youTube
+                        </a>
+                        <a href="https://www.tiktok.com/@chapotek" target="_blank" rel="noopener">
+                            tikTok
                         </a>
                         <a href="https://www.facebook.com/CHAPOtek" target="_blank" rel="noopener">
                             fakEbook
@@ -126,6 +150,29 @@ export default function Page() {
                     </h3>
                 </Link>
             </div>
+
+            {SHOW_NEWSLETTER && (
+                <section className="max-w-lg mx-auto mt-16">
+                    <p className="mb-3">Sumate. Recibí lo que va saliendo.</p>
+                    <form action="REEMPLAZAR_CON_FORM_KIT" method="post" className="flex flex-col sm:flex-row gap-3">
+                        <label className="sr-only" htmlFor="newsletter-email">Email</label>
+                        <input
+                            id="newsletter-email"
+                            name="email"
+                            type="email"
+                            required
+                            placeholder="tu email"
+                            className="min-w-0 flex-1 rounded border border-[var(--link)] bg-[var(--background)] px-4 py-2 text-[var(--foreground)] placeholder:text-[var(--foreground)]/60"
+                        />
+                        <button
+                            type="submit"
+                            className="rounded border border-[var(--link)] px-5 py-2 text-[var(--link)] transition-colors hover:border-[var(--link-hover)] hover:text-[var(--link-hover)]"
+                        >
+                            enviar
+                        </button>
+                    </form>
+                </section>
+            )}
         </main>
     )
 }

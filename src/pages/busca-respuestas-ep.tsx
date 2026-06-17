@@ -172,6 +172,22 @@ export default function Page() {
             <CustomHead
                 title="Busca Respuestas EP | CHAPOtek"
                 description='"Busca Respuestas" mezcla reggae y rap. 5inco canciones que invitan a mover el cuerpo y sacudir la mente.'
+                canonical="https://chapotek.net/busca-respuestas-ep/"
+                favicon="/favicon.ico"
+                faviconType="image/x-icon"
+                openGraph={{
+                    title: 'Busca Respuestas EP | CHAPOtek',
+                    description: '"Busca Respuestas": 5inco canciones que mezclan reggae y rap para mover el cuerpo y sacudir la mente.',
+                    image: 'https://chapotek.net/busca-respuestas-chapotek.webp',
+                    url: 'https://chapotek.net/busca-respuestas-ep/',
+                    type: 'music.album',
+                }}
+                twitter={{
+                    card: 'summary_large_image',
+                    title: 'Busca Respuestas EP | CHAPOtek',
+                    description: '"Busca Respuestas": reggae, rap y música consciente en español.',
+                    image: 'https://chapotek.net/busca-respuestas-chapotek.webp',
+                }}
                 jsonLd={JSONLD}
             />
             <h1>Busca Respuestas</h1>
